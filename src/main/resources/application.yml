@@ -74,10 +74,10 @@ server:
   servlet.contextPath: /api/v1
   port: 9443
   ssl:
-    key-store: keyproducts.p12
-    key-store-password: pa55wrd
+    key-store: keyproyecto.p12
+    key-store-password: dam3tufuerzap3gaso
     keyStoreType: PKCS12
-    keyAlias: tomcat
+    keyAlias: bobcat
 
 security.require-ssl: true
 
