@@ -1,7 +1,7 @@
 spring:
   application:
     name: ProyectosTareas
-  profiles.active: devtest
+  profiles.active: testing
 
 server:
   servlet.contextPath: /api
@@ -16,7 +16,7 @@ spring.mvc.pathmatch.matching-strategy: ANT_PATH_MATCHER
 
 ---
 spring:
-  sql.init.mode: always
+  sql.init.mode: never
   config.activate.on-profile: devtest
   devtools.restart.enabled: true
   application:

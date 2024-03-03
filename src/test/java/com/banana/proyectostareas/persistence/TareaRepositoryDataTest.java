@@ -42,6 +42,7 @@ class TareaRepositoryDataTest {
 
 
         // when
+
         List<Tarea> tareaList = repoTarea.findAll();
         logger.info("Tareas:" + tareaList);
 
@@ -51,25 +52,11 @@ class TareaRepositoryDataTest {
 
         assertNotNull(tareaList);
 
-        Integer idx = 1;
+
         for (Tarea t:tareaList) {
             System.out.println(t);
-            /*System.out.println("lista tareas("+ idx +")"+tareaList.get(idx));
-            idx++;*/
 
         }
     }
 
-    /*@Test
-    @Transactional
-    void getById() throws SQLException{
-
-
-        Tarea aTarea = repoTarea.getReferenceById(1L);
-        //Tarea aTarea = repoTarea.
-        System.out.println("JAJAJA");
-        System.out.println(aTarea);
-        assertEquals(aTarea.getId(), 1L);
-        assertNotNull(aTarea);
-    }*/
 }

@@ -47,6 +47,7 @@ class ProyectoRepositoryDataTest {
         //given
         Long indTarea = 1L;
 
+
         Optional<Tarea> tareaOpc = repoTarea.findById(indTarea);
         assertNotNull(tareaOpc);
         logger.info("TareaOPC:" + tareaOpc);
