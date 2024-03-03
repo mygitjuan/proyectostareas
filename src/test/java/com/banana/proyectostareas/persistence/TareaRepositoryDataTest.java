@@ -4,11 +4,15 @@ import com.banana.proyectostareas.config.SpringConfig;
 import com.banana.proyectostareas.model.Tarea;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.constraints.AssertTrue;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,13 +21,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @EnableAutoConfiguration
 class TareaRepositoryDataTest {
 
+    @Autowired
     TareaRepositoryData repoTarea;
 
     @Test
+    @Transactional
     void getById() throws SQLException{
-        Optional
-
-        Tarea aTarea = repoTarea.findById(1L);
+        /*Optional<Tarea> op = repoTarea.findById(1L);
+        Tarea aTarea = op.get(); */
+        Tarea aTarea = repoTarea.getById(1L);
         System.out.println(aTarea);
         assertEquals(aTarea.getId(), 1L);
         assertNotNull(aTarea);
