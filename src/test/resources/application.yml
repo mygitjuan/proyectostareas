@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ProductsService
+    name: ProyectosTareas
   profiles.active: testing
 
 server:
@@ -14,21 +14,13 @@ server:
 
 spring.mvc.pathmatch.matching-strategy: ANT_PATH_MATCHER
 
-springdoc:
-  api-docs.enabled: false
-  swagger-ui.enabled: false
-
-products.openapi:
-  dev-url: http://localhost:8080
-  prod-url: https://proyectostareas-api.com
-
 ---
 spring:
-  sql.init.mode: never  # avoid loading
-  config.activate.on-profile: testing
+  sql.init.mode: always
+  config.activate.on-profile: dev
   devtools.restart.enabled: true
   application:
-    name: ProductsService
+    name: ProyectosTareas
   datasource:
     url: "jdbc:h2:mem:proyectostareasdb"
     driverClassName: org.h2.Driver
@@ -40,12 +32,83 @@ spring:
     hibernate:
       ddl-auto: create-drop
       generate-ddl: true
-      hbm2ddl.auto: create
     defer-datasource-initialization: true
   h2:
-    console.enabled: false
+    console.enabled: true
     console.path: /h2-ui
 
 server:
-  #  servlet.contextPath: /api
+  servlet.contextPath: /api
+  port: 9900
+
+#debug: true
+logging:
+  level:
+    root: INFO
+
+
+---
+spring:
+  config.activate.on-profile: prod
+  sql.init.mode: never
+  devtools.restart.enabled: true
+  application:
+    name: ProyectosTareas
+  datasource:
+    url: "jdbc:h2:mem:proyectostareasdb"
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+      generate-ddl: true
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
+    console.path: /h2-ui
+
+server:
+  servlet.contextPath: /api/v1
+  port: 9443
+  ssl:
+    key-store: keyproyecto.p12
+    key-store-password: dam3tufuerzap3gaso
+    keyStoreType: PKCS12
+    keyAlias: bobcat
+
+security.require-ssl: true
+
+---
+spring:
+  sql.init.mode: always
+  config.activate.on-profile: testing
+  devtools.restart.enabled: true
+  application:
+    name: ProyectosTareas
+  datasource:
+    url: "jdbc:h2:mem:proyectostareasdb"
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+      generate-ddl: true
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
+    console.path: /h2-ui
+
+server:
+  servlet.contextPath: /api
   port: 9090
+
+#debug: true
+logging:
+  level:
+    root: INFO
