@@ -41,7 +41,7 @@ public class Tarea {
     private Integer orden;
     @Column(name="completada")
     @NotNull
-    @Schema(name = "completada", example = "", required = true)
+    @Schema(name = "completada", example = "true", required = true)
     private boolean completada;
 
 }

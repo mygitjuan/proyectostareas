@@ -9,6 +9,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,17 +24,23 @@ import java.time.LocalDate;
 public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     @Min(1)
     @Schema(name = "ProyectoID", example = "1", required = false)
     private Long id;
-    @Column(name="nombre")
+
     @Size(min = 3, max = 20)
     @Schema(name = "nombre", example = "UML", required = true)
     private String nombre;
+
     @Column(name="fecha_creacion")
     @DateTimeFormat
     @NotNull
     @Schema(name = "fechaCreacion", example = "2024-01-31", required = true)
     private LocalDate fechaCreacion;
+
+    @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+    @JoinColumn(name = "tarea_id")
+    @Min(1)
+    @Schema(name = "tarea_fkey", example = "1", required = true)
+    private List<Tarea> tareas = new ArrayList<>();
 }
