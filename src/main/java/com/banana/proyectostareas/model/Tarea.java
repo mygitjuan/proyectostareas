@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @Setter
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name = "tarea")
+@Table(name = "tareas")
 @Schema(name = "tarea", description = "Modelo tarea")
 public class Tarea {
     @Id
@@ -26,20 +26,21 @@ public class Tarea {
     @Min(1)
     @Schema(name = "TareaID", example = "1", required = false)
     private Long id;
-    @Column(name="descripcion")
+
     @Size(min = 3, max = 20)
     @Schema(name = "descripcion", example = "UML", required = true)
     private String descripcion;
+
     @Column(name="fecha_limite")
     @DateTimeFormat
     @NotNull
     @Schema(name = "fechaLimite", example = "2024-01-31", required = true)
     private LocalDate fechaLimite;
-    @Column(name="orden")
+
     @Min(1)
     @Schema(name = "orden", example = "1", required = true)
     private Integer orden;
-    @Column(name="completada")
+
     @NotNull
     @Schema(name = "completada", example = "true", required = true)
     private boolean completada;

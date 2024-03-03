@@ -19,7 +19,7 @@ import java.util.List;
 @Setter
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name = "proyecto")
+@Table(name = "proyectos")
 @Schema(name = "proyecto", description = "Modelo proyecto")
 public class Proyecto {
     @Id
@@ -39,7 +39,7 @@ public class Proyecto {
     private LocalDate fechaCreacion;
 
     @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-    @JoinColumn(name = "tarea_id")
+    @JoinColumn(name = "tareas")
     @Min(1)
     @Schema(name = "tarea_fkey", example = "1", required = true)
     private List<Tarea> tareas = new ArrayList<>();

@@ -2,6 +2,7 @@ package com.banana.proyectostareas.persistence;
 
 import com.banana.proyectostareas.config.SpringConfig;
 import com.banana.proyectostareas.model.Tarea;
+import com.banana.proyectostareas.model.Proyecto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
