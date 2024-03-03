@@ -31,7 +31,7 @@ class TareaRepositoryDataTest {
     private static final Logger logger = LoggerFactory.getLogger(TareaRepositoryDataTest.class);
 
     @Autowired
-    TareaRepositoryData repoTarea;
+    private TareaRepositoryData repoTarea;
 
     @Autowired
     private TestEntityManager em;
@@ -50,6 +50,14 @@ class TareaRepositoryDataTest {
                 .isGreaterThan(0);
 
         assertNotNull(tareaList);
+
+        Integer idx = 1;
+        for (Tarea t:tareaList) {
+            System.out.println(t);
+            /*System.out.println("lista tareas("+ idx +")"+tareaList.get(idx));
+            idx++;*/
+
+        }
     }
 
     /*@Test

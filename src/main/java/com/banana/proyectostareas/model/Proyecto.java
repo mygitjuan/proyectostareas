@@ -46,7 +46,6 @@ public class Proyecto {
 
     @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
     @JoinColumn(name = "proyecto_id")
-    @Min(1)
     @Schema(name = "proyecto_id", example = "", required = false)
     private List<Tarea> tareasList = new ArrayList<>();
 }

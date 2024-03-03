@@ -1,2 +1,0 @@
-TRUNCATE  TABLE proyectos;
-TRUNCATE  TABLE tareas;

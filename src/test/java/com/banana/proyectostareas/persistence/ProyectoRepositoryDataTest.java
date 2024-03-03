@@ -1,6 +1,7 @@
 package com.banana.proyectostareas.persistence;
 
 import com.banana.proyectostareas.model.Proyecto;
+import com.banana.proyectostareas.model.Tarea;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,12 +33,57 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @AutoConfigureTestEntityManager
 class ProyectoRepositoryDataTest {
     @Autowired
-    ProyectoRepositoryData repoProyecto;
+    private ProyectoRepositoryData repoProyecto;
 
+    @Autowired
+    private TareaRepositoryData repoTarea;
     private static final Logger logger = LoggerFactory.getLogger(TareaRepositoryDataTest.class);
 
     @Autowired
     private TestEntityManager em;
+
+    @Test
+    void crearProyectosDevuelveOK() {
+        //given
+        Long indTarea = 1L;
+
+        Optional<Tarea> tareaOpc = repoTarea.findById(indTarea);
+        assertNotNull(tareaOpc);
+        logger.info("TareaOPC:" + tareaOpc);
+
+        Tarea unaTarea = (Tarea) tareaOpc.get();
+        assertNotNull(unaTarea);
+        logger.info("unaTarea:" + unaTarea);
+
+        List<Tarea> tareaList = new ArrayList<>();
+        tareaList.add(unaTarea);
+        logger.info("Tarea:" + tareaList);
+        assertNotNull(tareaList);
+
+
+        Proyecto proyecto = new Proyecto(null,"ReskillRPG",LocalDate.now(),6,tareaList);
+
+        //then
+        em.persist(proyecto);
+        em.flush();
+        //when
+        logger.info("Proyecto:" + proyecto);
+        assertNotNull(proyecto);
+        assertTrue(proyecto.getId() > 0);
+
+        Proyecto proyectoExtraer = em.find(Proyecto.class, proyecto.getId());
+        logger.info("Proyecto Extraer:" + proyectoExtraer);
+        assertNotNull(proyectoExtraer);
+        assertEquals(proyectoExtraer.getId(), proyecto.getId());
+
+    }
+
+    @Test
+    void crearProyectosDevuelveIncidencia() {
+        //given
+        //then
+        //when
+    }
 
     @Test
     void findAll() {

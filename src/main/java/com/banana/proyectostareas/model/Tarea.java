@@ -24,7 +24,7 @@ public class Tarea {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     @Min(1)
-    @Schema(name = "TareaID", example = "1", required = false)
+    @Schema(name = "TareaID", example = "1L", required = false)
     private Long id;
 
     @Size(min = 3, max = 20)
@@ -48,7 +48,6 @@ public class Tarea {
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinColumn(name = "proyecto_id")
     @ToString.Exclude
-    @Min(1)
     @Schema(name = "proyecto_id", example = "", required = false)
     private Proyecto proyecto;
 }
