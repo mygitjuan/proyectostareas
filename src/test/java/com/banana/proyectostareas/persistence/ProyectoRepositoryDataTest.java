@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @AutoConfigureTestEntityManager
 class ProyectoRepositoryDataTest {
     @Autowired
-    ProyectoRepositoryData repoProyecto;
+    private ProyectoRepositoryData repoProyecto;
 
     private static final Logger logger = LoggerFactory.getLogger(TareaRepositoryDataTest.class);
 
@@ -38,7 +38,7 @@ class ProyectoRepositoryDataTest {
     private TestEntityManager em;
 
     @Test
-    void findAll() {
+    void listarProyectos() {
         // given SQL Inserts
 
 
@@ -49,9 +49,38 @@ class ProyectoRepositoryDataTest {
         // then
         assertThat(proyectoList.size())
                 .isGreaterThan(0);
-
         assertNotNull(proyectoList);
     }
 
+    @Test
+    void listarProyectosporIDcuandoExiste() {
+        // given SQL Inserts
+        Long indicadorSolicitado = 1L;
+
+
+        // when
+        Optional<Proyecto> op = repoProyecto.findById(indicadorSolicitado);
+        Proyecto proyecto = (Proyecto) op.get();
+
+        logger.info("Proyectos:" + proyecto);
+
+        // then
+        assertEquals(proyecto.getId(),indicadorSolicitado);
+        assertNotNull(proyecto);
+    }
+
+    @Test
+    void listarProyectosporIDcuandoInexistente() {
+        // given SQL Inserts
+        Long indicadorSolicitado = 100L;
+
+
+        // when
+        Optional<Proyecto> op = repoProyecto.findById(indicadorSolicitado);
+
+
+        // then
+        assertTrue(op.isEmpty());
+    }
 
 }

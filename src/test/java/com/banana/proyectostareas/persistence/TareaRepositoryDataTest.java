@@ -31,7 +31,7 @@ class TareaRepositoryDataTest {
     private static final Logger logger = LoggerFactory.getLogger(TareaRepositoryDataTest.class);
 
     @Autowired
-    TareaRepositoryData repoTarea;
+    public TareaRepositoryData repoTarea;
 
     @Autowired
     private TestEntityManager em;
