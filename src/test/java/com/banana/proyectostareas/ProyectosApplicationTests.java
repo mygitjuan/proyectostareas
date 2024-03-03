@@ -9,11 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-/*@ExtendWith(SpringExtension.class)
-@DataJpaTest
-@ComponentScan("com.banana.proyectostareas.persistence")
-@EnableAutoConfiguration
-@AutoConfigureTestEntityManager*/
+
 @SpringBootTest
 class ProyectosApplicationTests {
 

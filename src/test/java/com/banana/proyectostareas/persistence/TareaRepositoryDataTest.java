@@ -38,10 +38,8 @@ class TareaRepositoryDataTest {
 
     @Test
     void findAll() {
-        // given
-        /*Product aProduct = new Product(null, "Fake Product", "123-123-1234");
-        entityManager.persist(aProduct);
-        entityManager.flush();*/
+        // given SQL Inserts
+
 
         // when
         List<Tarea> tareaList = repoTarea.findAll();
