@@ -1,6 +1,7 @@
 package com.banana.proyectostareas;
 
 import com.banana.proyectostareas.config.SpringConfig;
+import com.banana.proyectostareas.config._SpringConfig_;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -7,10 +7,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@PropertySource("classpath:application.yml")
+@PropertySource("classpath:_application.yml_")
 @ComponentScan(basePackages = {"com.banana.proyectostareas.persistence", "com.banana.proyectostareas.service"})
 @EntityScan("com.banana.proyectostareas.model")
 @EnableJpaRepositories(basePackages = {"com.banana.proyectostareas.persistence"})
-public class SpringConfig {
+public class _SpringConfig_ {
 
 }
