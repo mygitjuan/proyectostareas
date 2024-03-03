@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,9 +28,9 @@ class TareaRepositoryDataTest {
     @Test
     @Transactional
     void getById() throws SQLException{
-        /*Optional<Tarea> op = repoTarea.findById(1L);
-        Tarea aTarea = op.get(); */
-        Tarea aTarea = repoTarea.getById(1L);
+        Optional<Tarea> op = repoTarea.findById(1L);
+        Tarea aTarea = (Tarea) op.get();
+        //Tarea aTarea = repoTarea.
         System.out.println(aTarea);
         assertEquals(aTarea.getId(), 1L);
         assertNotNull(aTarea);

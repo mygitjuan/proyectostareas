@@ -7,10 +7,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-//@PropertySource("classpath:application.properties")
-//@ComponentScan(basePackages = {"com.banana.persistence", "com.banana.services"})
-//@EntityScan("com.banana.models")
-@EnableJpaRepositories(basePackages = {"com.banana.proyectostareas.persistence"}, entityManagerFactoryRef = "aModelEmf")
+@PropertySource("classpath:application.yml")
+@ComponentScan(basePackages = {"com.banana.proyectostareas.persistence", "com.banana.proyectostareas.service"})
+@EntityScan("com.banana.proyectostareas.model")
+@EnableJpaRepositories(basePackages = {"com.banana.proyectostareas.persistence"})
 public class SpringConfig {
 
 }
