@@ -26,6 +26,8 @@ class ProyectoRepositoryDataTest {
     @Autowired
     ProyectoRepositoryData repoProyecto;
 
+    @Test
+    @Transactional
     void getById() throws SQLException {
         Optional<Proyecto> opt = repoProyecto.findById(1L);
         Proyecto aProyecto = (Proyecto) opt.get();

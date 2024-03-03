@@ -1,5 +1,6 @@
 package com.banana.proyectostareas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -38,9 +39,14 @@ public class Proyecto {
     @Schema(name = "fechaCreacion", example = "2024-01-31", required = true)
     private LocalDate fechaCreacion;
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-    @JoinColumn(name = "tareas")
+    @Column(name="tareas")
     @Min(1)
-    @Schema(name = "tarea_fkey", example = "1", required = true)
-    private List<Tarea> tareas = new ArrayList<>();
+    @Schema(name = "tareas", example = "1", required = true)
+    private Integer tareas;
+
+    @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+    @JoinColumn(name = "proyecto_id")
+    @Min(1)
+    @Schema(name = "proyecto_id", example = "", required = false)
+    private List<Tarea> tareasList = new ArrayList<>();
 }

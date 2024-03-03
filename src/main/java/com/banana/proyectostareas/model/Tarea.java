@@ -45,4 +45,10 @@ public class Tarea {
     @Schema(name = "completada", example = "true", required = true)
     private boolean completada;
 
+    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "proyecto_id")
+    @ToString.Exclude
+    @Min(1)
+    @Schema(name = "proyecto_id", example = "", required = false)
+    private Proyecto proyecto;
 }

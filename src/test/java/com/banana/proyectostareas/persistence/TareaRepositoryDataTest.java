@@ -29,9 +29,12 @@ class TareaRepositoryDataTest {
     @Test
     @Transactional
     void getById() throws SQLException{
-        Optional<Tarea> op = repoTarea.findById(1L);
-        Tarea aTarea = (Tarea) op.get();
+        /*Optional<Tarea> op = repoTarea.findById(1L);
+        System.out.println("JEJEJE");
+        Tarea aTarea = (Tarea) op.get();*/
+        Tarea aTarea = repoTarea.getReferenceById(1L);
         //Tarea aTarea = repoTarea.
+        System.out.println("JAJAJA");
         System.out.println(aTarea);
         assertEquals(aTarea.getId(), 1L);
         assertNotNull(aTarea);
