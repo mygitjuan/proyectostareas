@@ -45,8 +45,8 @@ public class Proyecto {
     @Schema(name = "tareas", example = "1", required = true)
     private Integer tareas;
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
-    @JoinColumn(name = "proyecto_id")
+    @JsonIgnore
     @Schema(name = "proyecto_id", example = "", required = false)
+    @OneToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY, mappedBy = "proyecto")
     private List<Tarea> tareasList = new ArrayList<>();
 }
