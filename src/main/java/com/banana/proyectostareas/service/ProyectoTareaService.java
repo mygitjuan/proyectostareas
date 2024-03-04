@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProyectoTareaService {
 
-    public Proyecto crearProyecto(Proyecto proyecto) throws RuntimeException;
+    public Proyecto crearProyecto(Proyecto proyecto) throws ProyectoNotfoundException, RuntimeException;
 
     public Proyecto anadeTareaAProyecto(Long idProyecto, Tarea tarea) throws ProyectoNotfoundException, RuntimeException;
 
