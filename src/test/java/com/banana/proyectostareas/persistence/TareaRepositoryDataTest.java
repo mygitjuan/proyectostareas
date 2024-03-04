@@ -1,5 +1,6 @@
 package com.banana.proyectostareas.persistence;
 
+import com.banana.proyectostareas.exception.TareaNotfoundException;
 import com.banana.proyectostareas.model.Tarea;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -39,7 +40,7 @@ class TareaRepositoryDataTest {
     private TestEntityManager em;
 
     @Test
-    void findAll() {
+    void findAll() throws TareaNotfoundException {
         // given SQL Inserts
         Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
         em.persist(tarea);
