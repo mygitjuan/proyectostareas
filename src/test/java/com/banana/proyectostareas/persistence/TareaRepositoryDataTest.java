@@ -13,8 +13,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
+import static java.lang.Boolean.FALSE;
 import static org.junit.jupiter.api.Assertions.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +41,10 @@ class TareaRepositoryDataTest {
     @Test
     void findAll() {
         // given SQL Inserts
-
+        Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
+        em.persist(tarea);
+        em.remove(tarea); //quiero usar un Entity Manager, pero no quiero hacer el alta, solo quiero retornar datos
+        em.flush();
 
         // when
 

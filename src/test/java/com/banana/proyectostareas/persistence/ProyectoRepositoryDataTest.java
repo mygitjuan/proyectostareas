@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.Boolean.FALSE;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.slf4j.Logger;
@@ -45,6 +46,11 @@ class ProyectoRepositoryDataTest {
     @Test
     void crearProyectosDevuelveOK() {
         //given
+        Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
+        em.persist(tarea);
+        em.remove(tarea); //quiero usar un Entity Manager, pero no quiero hacer el alta, solo quiero retornar datos
+        em.flush();
+
         Long indTarea = 1L;
 
 
