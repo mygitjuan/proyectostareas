@@ -1,5 +1,6 @@
 package com.banana.proyectostareas.persistence;
 
+import com.banana.proyectostareas.exception.ProyectoNotfoundException;
 import com.banana.proyectostareas.model.Proyecto;
 import com.banana.proyectostareas.model.Tarea;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.Boolean.FALSE;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.slf4j.Logger;
@@ -40,9 +42,12 @@ class ListarProyectoRepositoryDataTest {
     private TestEntityManager em;
 
     @Test
-    void listarProyectos() {
-        // given SQL Inserts
-
+    void listarProyectos() throws ProyectoNotfoundException {
+        // given
+        Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
+        em.persist(tarea);
+        em.remove(tarea); //quiero usar un Entity Manager, pero no quiero hacer el alta, solo quiero retornar datos
+        em.flush();
 
         // when
         List<Proyecto> proyectoList = repoProyecto.findAll();
@@ -55,7 +60,7 @@ class ListarProyectoRepositoryDataTest {
     }
 
     @Test
-    void listarProyectosporIDcuandoExiste() {
+    void listarProyectosporIDcuandoExiste() throws ProyectoNotfoundException{
         // given SQL Inserts
         Long indicadorSolicitado = 1L;
 
@@ -72,7 +77,7 @@ class ListarProyectoRepositoryDataTest {
     }
 
     @Test
-    void listarProyectosporIDcuandoInexistente() {
+    void listarProyectosporIDcuandoInexistente() throws ProyectoNotfoundException{
         // given SQL Inserts
         Long indicadorSolicitado = 100L;
 
