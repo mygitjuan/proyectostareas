@@ -11,11 +11,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static java.lang.Boolean.FALSE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -36,7 +38,10 @@ class ListarTareaRepositoryDataTest {
     @Test
     void findAll() throws TareaNotfoundException {
         // given SQL Inserts
-
+        Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
+        em.persist(tarea);
+        em.remove(tarea); //quiero usar un Entity Manager, pero no quiero hacer el alta, solo quiero retornar datos
+        em.flush();
 
         // when
         List<Tarea> tareaList = repoTarea.findAll();
