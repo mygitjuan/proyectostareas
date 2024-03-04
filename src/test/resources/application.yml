@@ -1,7 +1,7 @@
 spring:
   application:
     name: ProyectosTareas
-  profiles.active: devtest
+  profiles.active: testing
 
 server:
   servlet.contextPath: /api
@@ -16,7 +16,7 @@ spring.mvc.pathmatch.matching-strategy: ANT_PATH_MATCHER
 
 ---
 spring:
-  sql.init.mode: never
+  sql.init.mode: always
   config.activate.on-profile: devtest
   devtools.restart.enabled: true
   application:
@@ -30,7 +30,7 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL5Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
       generate-ddl: true
     defer-datasource-initialization: true
   h2:

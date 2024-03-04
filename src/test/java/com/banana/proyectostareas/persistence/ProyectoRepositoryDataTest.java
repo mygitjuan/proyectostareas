@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
@@ -34,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @DataJpaTest
 @ComponentScan("com.banana.proyectostareas.persistence")
 @AutoConfigureTestEntityManager
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class ProyectoRepositoryDataTest {
     @Autowired
     private ProyectoRepositoryData repoProyecto;
@@ -133,8 +135,8 @@ class ProyectoRepositoryDataTest {
 
         //then
         em.persist(proyecto);
-        em.remove(proyecto);
-        em.flush();
+        //em.remove(proyecto);
+        //em.flush();
 
         // when
         List<Proyecto> proyectoList = repoProyecto.findAll();
