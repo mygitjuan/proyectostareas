@@ -16,8 +16,8 @@ spring.mvc.pathmatch.matching-strategy: ANT_PATH_MATCHER
 
 ---
 spring:
-  sql.init.mode: never
-  config.activate.on-profile: testing
+  sql.init.mode: always
+  config.activate.on-profile: devtest
   devtools.restart.enabled: true
   application:
     name: ProyectosTareas
