@@ -13142,6 +13142,118 @@
             "item": [
                 {
                     "request": {
+                        "url": "http://localhost:9900/api/proyectos/",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                        }
+                    },
+                    "id": "rester-45",
+                    "name": "get find all proyecto",
+                    "response": [
+                        {
+                            "id": "rester-339",
+                            "name": "2024-03-04T23:55:32.231Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 572,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 04 Mar 2024 23:55:32 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "[{\"id\":1,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":2,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":3,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":4,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":5,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5}]",
+                            "status": "",
+                            "code": 200
+                        },
+                        {
+                            "id": "rester-338",
+                            "name": "2024-03-04T23:55:18.612Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/",
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 573.8000000044703,
+                            "header": [
+                                {
+                                    "key": "Allow",
+                                    "value": "GET"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 04 Mar 2024 23:55:19 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "{\"timestamp\":\"2024-03-04T23:55:18.945+00:00\",\"status\":405,\"error\":\"Method Not Allowed\",\"message\":\"Request method 'POST' not supported\",\"path\":\"/api/proyectos/\"}",
+                            "status": "",
+                            "code": 405
+                        }
+                    ]
+                },
+                {
+                    "request": {
                         "url": "http://localhost:9900/api/proyectos/alta",
                         "method": "POST",
                         "header": [
@@ -13158,6 +13270,94 @@
                     "id": "rester-44",
                     "name": "post create proyecto",
                     "response": [
+                        {
+                            "id": "rester-337",
+                            "name": "2024-03-04T23:48:24.094Z post create proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/alta",
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 31.100000001490116,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 04 Mar 2024 23:48:24 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "{\"id\":7,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}",
+                            "status": "",
+                            "code": 201
+                        },
+                        {
+                            "id": "rester-336",
+                            "name": "2024-03-04T23:48:19.445Z post create proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/alta",
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 970,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 04 Mar 2024 23:48:20 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "{\"id\":6,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}",
+                            "status": "",
+                            "code": 201
+                        },
                         {
                             "id": "rester-335",
                             "name": "2024-03-04T23:23:07.873Z post create proyecto",

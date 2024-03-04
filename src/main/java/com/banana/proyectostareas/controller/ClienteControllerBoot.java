@@ -46,6 +46,17 @@ public class ClienteControllerBoot {
 
         return new ResponseEntity<> ((Proyecto) repo.save(nuevoProyecto), HttpStatus.CREATED);
     }
+
+    @GetMapping(value = "", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Object> getAll() {
+        List<Proyecto> listCliente = repo.findAll();
+        if (listCliente == null) {
+            return new ResponseEntity<>(new StatusMessage(HttpStatus.NOT_FOUND.value(), "No hay proyectos cargados"), HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>( repo.findAll(), HttpStatus.OK);
+        }
+
+    }
 /*
     @PostMapping(value = "/empresa", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Object > saveEmpresa(@RequestBody Empresa newCliente) throws Exception {
