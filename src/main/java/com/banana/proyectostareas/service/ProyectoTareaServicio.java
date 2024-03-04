@@ -8,6 +8,7 @@ import com.banana.proyectostareas.persistence.ProyectoRepositoryData;
 import com.banana.proyectostareas.persistence.TareaJPARepository;
 import com.banana.proyectostareas.persistence.TareaRepositoryData;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import static java.lang.Boolean.FALSE;
 
+@Service
 public class ProyectoTareaServicio implements ProyectoTareaService{
 
     @Autowired
@@ -44,7 +46,19 @@ public class ProyectoTareaServicio implements ProyectoTareaService{
 
     @Override
     public List<Proyecto> obtenerProyectos() throws ProyectoNotfoundException, RuntimeException {
-        return null;
+        List<Proyecto> proyectoList = null;
+
+        try {
+            proyectoList = repoProyecto.findAll();
+        } catch (ProyectoNotfoundException e) {
+            e.printStackTrace();
+            throw new ProyectoNotfoundException("Error al obtener lista de usuarios: "  + e.getMessage());
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            throw new ProyectoNotfoundException("Error al obtener lista de usuarios: "  + e.getMessage());
+        }
+
+        return proyectoList;
     }
 
     @Override
