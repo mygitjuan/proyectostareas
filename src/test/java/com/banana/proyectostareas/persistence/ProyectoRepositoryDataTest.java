@@ -72,15 +72,17 @@ class ProyectoRepositoryDataTest {
 
         Long indTarea = 1L;
 
-
+        //Buscamos la tarea
         Optional<Tarea> tareaOpc = repoTarea.findById(indTarea);
         assertNotNull(tareaOpc);
         logger.info("TareaOPC:" + tareaOpc);
 
+        //Como causa problemas al moverla directamente a List<Tarea>, hago un pase intermedio a Tarea.
         Tarea unaTarea = (Tarea) tareaOpc.get();
         assertNotNull(unaTarea);
         logger.info("unaTarea:" + unaTarea);
 
+        //Informamos el área List que insertaremos en la entidad
         List<Tarea> tareaList = new ArrayList<>();
         tareaList.add(unaTarea);
         logger.info("Tarea:" + tareaList);
@@ -125,7 +127,6 @@ class ProyectoRepositoryDataTest {
         List<Proyecto> proyectoList = repoProyecto.findAll();
         logger.info("Proyectos:" + proyectoList);
 
-        // then
         assertThat(proyectoList.size())
                 .isGreaterThan(0);
 
