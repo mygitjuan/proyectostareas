@@ -1,7 +1,9 @@
 package com.banana.proyectostareas.persistence;
 
+import com.banana.proyectostareas.exception.ProyectoNotfoundException;
 import com.banana.proyectostareas.model.Proyecto;
 import com.banana.proyectostareas.model.Tarea;
+import org.hibernate.PersistentObjectException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +46,7 @@ class ProyectoRepositoryDataTest {
     private TestEntityManager em;
 
     @Test
-    void soloProyecto(){
+    void soloProyecto() throws ProyectoNotfoundException{
         Proyecto proyecto = new Proyecto(null,"ReskillRPG",LocalDate.now(),6,null);
 
         //then
@@ -63,7 +65,7 @@ class ProyectoRepositoryDataTest {
     }
 
     @Test
-    void crearProyectosDevuelveOK() {
+    void crearProyectosDevuelveOK() throws ProyectoNotfoundException {
         //given
         Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
         em.persist(tarea);
@@ -107,14 +109,43 @@ class ProyectoRepositoryDataTest {
     }
 
     @Test
-    void crearProyectosDevuelveIncidencia() {
+    void crearProyectosDevuelveIncidencia() throws ProyectoNotfoundException {
         //given
+        Tarea tarea = new Tarea(null,"FAKE", LocalDate.now(),6,FALSE,null);
+        em.persist(tarea);
+        em.remove(tarea); //quiero usar un Entity Manager, pero no quiero hacer el alta, solo quiero retornar datos
+        em.flush();
+
+        Long indTarea = 1L;
+
+        //Buscamos la tarea
+        Optional<Tarea> tareaOpc = repoTarea.findById(indTarea);
+        assertNotNull(tareaOpc);
+        logger.info("TareaOPC:" + tareaOpc);
+
+        //Como causa problemas al moverla directamente a List<Tarea>, hago un pase intermedio a Tarea.
+        Tarea unaTarea = (Tarea) tareaOpc.get();
+        assertNotNull(unaTarea);
+        logger.info("unaTarea:" + unaTarea);
+
+        //Informamos el área List que insertaremos en la entidad
+        List<Tarea> tareaList = new ArrayList<>();
+        tareaList.add(unaTarea);
+        logger.info("Tarea:" + tareaList);
+        assertNotNull(tareaList);
         //then
+        Proyecto proyecto = new Proyecto(1L,"Duplicado",LocalDate.now(),6,tareaList);
+
         //when
+        assertThrows(Exception.class, () -> {
+                    em.persist(proyecto);
+                }
+        );
+
     }
 
     @Test
-    void findAll() {
+    void findAll() throws ProyectoNotfoundException{
         // given SQL Inserts
         Proyecto proyecto = new Proyecto(null,"ReskillRPG",LocalDate.now(),6,null);
 
