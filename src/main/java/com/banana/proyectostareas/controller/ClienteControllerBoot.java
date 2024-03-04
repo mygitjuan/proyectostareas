@@ -35,7 +35,8 @@ public class ClienteControllerBoot {
     private ProyectoRepositoryData repo;
 
     @PostMapping(value = "/alta", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<Object> save(@RequestBody @Valid @ModelAttribute("proyecto") Proyecto nuevoProyecto, BindingResult result, ModelMap model) throws Exception {
+    public ResponseEntity<Object> save(@RequestBody @Valid Proyecto nuevoProyecto, BindingResult result ) throws Exception {
+
         if (result.hasErrors()) {
             return new ResponseEntity<>(new StatusMessage(HttpStatus.BAD_REQUEST.value(), "Proyecto no válido. El formato es numéricos > 0, nombre entre 3 y 5 carácteres"), HttpStatus.BAD_REQUEST);
         }

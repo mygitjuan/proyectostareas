@@ -36,7 +36,7 @@ public class Proyecto {
 
     @Column(name="fecha_creacion")
     @DateTimeFormat
-    @NotNull
+    //@NotNull
     @Schema(name = "fechaCreacion", example = "2024-01-31", required = true)
     private LocalDate fechaCreacion;
 
