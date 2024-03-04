@@ -1,7 +1,7 @@
 spring:
   application:
     name: ProyectosTareas
-  profiles.active: prod
+  profiles.active: dev
 
 server:
   servlet.contextPath: /api
