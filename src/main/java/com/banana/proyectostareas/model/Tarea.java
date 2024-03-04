@@ -1,5 +1,6 @@
 package com.banana.proyectostareas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -46,9 +47,11 @@ public class Tarea {
     @Schema(name = "completada", example = "true", required = true)
     private boolean completada;
 
+
+    @ToString.Exclude
+    @JsonIgnore
+    @Schema(name = "proyecto_id", example = "", required = false)
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinColumn(name = "proyecto_id")
-    @ToString.Exclude
-    @Schema(name = "proyecto_id", example = "", required = false)
     private Proyecto proyecto;
 }
