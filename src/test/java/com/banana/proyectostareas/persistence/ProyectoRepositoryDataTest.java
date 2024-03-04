@@ -114,7 +114,12 @@ class ProyectoRepositoryDataTest {
     @Test
     void findAll() {
         // given SQL Inserts
+        Proyecto proyecto = new Proyecto(null,"ReskillRPG",LocalDate.now(),6,null);
 
+        //then
+        em.persist(proyecto);
+        em.remove(proyecto);
+        em.flush();
 
         // when
         List<Proyecto> proyectoList = repoProyecto.findAll();
