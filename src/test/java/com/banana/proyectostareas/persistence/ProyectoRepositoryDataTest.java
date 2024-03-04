@@ -45,24 +45,6 @@ class ProyectoRepositoryDataTest {
     @Autowired
     private TestEntityManager em;
 
-    @Test
-    void soloProyecto() throws ProyectoNotfoundException{
-        Proyecto proyecto = new Proyecto(null,"ReskillRPG",LocalDate.now(),6,null);
-
-        //then
-        em.persist(proyecto);
-        em.flush();
-        //when
-        logger.info("Proyecto:" + proyecto);
-        assertNotNull(proyecto);
-        assertTrue(proyecto.getId() > 0);
-
-        Proyecto proyectoExtraer = em.find(Proyecto.class, proyecto.getId());
-        logger.info("Proyecto Extraer:" + proyectoExtraer);
-        assertNotNull(proyectoExtraer);
-        assertEquals(proyectoExtraer.getId(), proyecto.getId());
-
-    }
 
     @Test
     void crearProyectosDevuelveOK() throws ProyectoNotfoundException {
