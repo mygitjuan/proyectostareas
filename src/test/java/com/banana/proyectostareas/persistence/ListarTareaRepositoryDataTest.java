@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 @ComponentScan("com.banana.proyectostareas.persistence")
-//@EnableAutoConfiguration
 @AutoConfigureTestEntityManager
 class ListarTareaRepositoryDataTest {
     private static final Logger logger = LoggerFactory.getLogger(ListarTareaRepositoryDataTest.class);
