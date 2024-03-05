@@ -5,7 +5,7 @@
     },
     "item": [
         {
-            "name": "Proyectostareas",
+            "name": "DEV Proyectostareas",
             "item": [
                 {
                     "request": {
@@ -22,8 +22,98 @@
                             "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
                         }
                     },
-                    "id": "rester-45",
-                    "name": "get find all proyecto"
+                    "id": "rester-46",
+                    "name": "get find all proyecto",
+                    "response": [
+                        {
+                            "id": "rester-342",
+                            "name": "2024-03-05T11:16:36.673Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 29.800000000046566,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:16:36 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "[{\"id\":1,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":2,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":3,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":4,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":5,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":6,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}]",
+                            "status": "",
+                            "code": 200
+                        },
+                        {
+                            "id": "rester-340",
+                            "name": "2024-03-05T11:16:23.414Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 859.1000000000931,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:16:24 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "[{\"id\":1,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":2,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":3,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":4,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":5,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5}]",
+                            "status": "",
+                            "code": 200
+                        }
+                    ]
                 },
                 {
                     "request": {
@@ -40,8 +130,263 @@
                             "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
                         }
                     },
-                    "id": "rester-44",
-                    "name": "post create proyecto"
+                    "id": "rester-47",
+                    "name": "post create proyecto",
+                    "response": [
+                        {
+                            "id": "rester-341",
+                            "name": "2024-03-05T11:16:32.902Z post create proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9900/api/proyectos/alta",
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 243,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:16:33 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "{\"id\":6,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}",
+                            "status": "",
+                            "code": 201
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "PROD Proyectostareas",
+            "item": [
+                {
+                    "request": {
+                        "url": "https://localhost:9443/api/v1/proyectos/",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                        }
+                    },
+                    "id": "rester-49",
+                    "name": "get find all proyecto",
+                    "response": [
+                        {
+                            "id": "rester-346",
+                            "name": "2024-03-05T11:18:59.226Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "https://localhost:9443/api/v1/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 41.39999999990687,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:18:59 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "[{\"id\":1,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":2,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":3,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":4,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":5,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":6,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":7,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":8,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":9,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":10,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":11,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":12,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":13,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":14,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":15,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":16,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":17,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":18,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":19,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":20,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":21,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":22,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":23,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":24,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":25,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":26,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}]",
+                            "status": "",
+                            "code": 200
+                        },
+                        {
+                            "id": "rester-344",
+                            "name": "2024-03-05T11:18:36.854Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "https://localhost:9443/api/v1/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 78.5,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:18:36 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "[{\"id\":1,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":2,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":3,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":4,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":5,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":6,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":7,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":8,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":9,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":10,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":11,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":12,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":13,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":14,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":15,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":16,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":17,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":18,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":19,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":20,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5},{\"id\":21,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":1},{\"id\":22,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":2},{\"id\":23,\"nombre\":\"ReskillJava\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":3},{\"id\":24,\"nombre\":\"ReskillCobol\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":4},{\"id\":25,\"nombre\":\"ReskillWindows\",\"fechaCreacion\":\"2024-02-29\",\"tareas\":5}]",
+                            "status": "",
+                            "code": 200
+                        },
+                        {
+                            "id": "rester-343",
+                            "name": "2024-03-05T11:18:25.458Z get find all proyecto",
+                            "originalRequest": {
+                                "url": "http://localhost:9443/api/v1/proyectos/",
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 16.100000000093132,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain;charset=UTF-8"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                }
+                            ],
+                            "body": "Bad Request\r\nThis combination of host and port requires TLS.\r\n",
+                            "status": "",
+                            "code": 400
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": "https://localhost:9443/api/v1/proyectos/alta/",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                        }
+                    },
+                    "id": "rester-48",
+                    "name": "post create proyecto",
+                    "response": [
+                        {
+                            "id": "rester-345",
+                            "name": "2024-03-05T11:18:53.395Z post create proyecto",
+                            "originalRequest": {
+                                "url": "https://localhost:9443/api/v1/proyectos/alta/",
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                                }
+                            },
+                            "responseTime": 343.89999999990687,
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Transfer-Encoding",
+                                    "value": "chunked"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Tue, 05 Mar 2024 11:18:53 GMT"
+                                },
+                                {
+                                    "key": "Keep-Alive",
+                                    "value": "timeout=60"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "keep-alive"
+                                }
+                            ],
+                            "body": "{\"id\":26,\"nombre\":\"RPG\",\"fechaCreacion\":\"2024-03-05\",\"tareas\":1}",
+                            "status": "",
+                            "code": 201
+                        }
+                    ]
                 }
             ]
         }
