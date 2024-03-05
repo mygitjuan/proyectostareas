@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,12 +16,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-
 class ProyectoControllerTest {
     @Autowired
     private ProyectoController controller;
 
     @Test
+    @Transactional
     void givenProducts_whengetAllProducts_thenIsNotNull() {
         ResponseEntity<Object> response = controller.getAll();
         System.out.println("response:" + response.getBody());
