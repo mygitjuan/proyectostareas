@@ -10,11 +10,14 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -36,49 +39,43 @@ class ProyectoControllerTestWebMockMvc {
     public void setUp() {
         LocalDate fecha = LocalDate.now();
 
-        List<Proyecto> products = Arrays.asList(
+        List<Proyecto> proyectos = Arrays.asList(
                 new Proyecto(1L, "Fake proyecto",fecha ,1,null)
         );
 
-        Mockito.when(service.getProductsByText("Fake"))
-                .thenReturn(products);
+        Mockito.when(service.getProyectosByText("Fake"))
+                .thenReturn(proyectos);
 
         Mockito.when(repository.findByNombreContaining("Fake"))
-                .thenReturn(products);
+                .thenReturn(proyectos);
 
         Mockito.when(repository.findAll())
-                .thenReturn(products);
+                .thenReturn(proyectos);
 
-        Mockito.when(repository.save(Mockito.any(Proyecto.class)))
-                .thenAnswer(elem -> {
-                    Proyecto proy = (Proyecto) elem.getArguments()[0];
-                    proy.setId(100L);
-                    return proy;
-                });
     }
 
 
     @Autowired
     private MockMvc mvc;
 
-    @Autowired
+    @MockBean
     private ProyectoTareaService service;
 
-    @Autowired
+    @MockBean
     private ProyectoRepositoryData repository;
 
 
     @Test
+    //@Transactional
     @Order(1)
-    @Transactional
     public void givenProducts_whenGetProducts_thenStatus200() throws Exception {
         Proyecto nuevoProy = new Proyecto(1L, "Fake proyecto", LocalDate.now(),1,null);
 
-        List<Proyecto> allProducts = Arrays.asList(nuevoProy);
+        List<Proyecto> allProyectos = Arrays.asList(nuevoProy);
 
-        given(repository.findAll()).willReturn(allProducts);
+        given(repository.findAll()).willReturn(allProyectos);
 
-        mvc.perform(get("/proyecto")
+        mvc.perform(get("/proyectos")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

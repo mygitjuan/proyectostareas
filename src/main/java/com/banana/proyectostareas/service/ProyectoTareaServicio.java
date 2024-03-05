@@ -54,7 +54,7 @@ public class ProyectoTareaServicio implements ProyectoTareaService{
     }
 
     @Override
-    public List<Proyecto> getProductsByText(String text) {
+    public List<Proyecto> getProyectosByText(String text) {
         return repoProyecto.findByNombreContaining(text);
     }
 }
