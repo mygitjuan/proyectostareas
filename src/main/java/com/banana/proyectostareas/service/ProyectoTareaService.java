@@ -19,4 +19,6 @@ public interface ProyectoTareaService {
 
     public Tarea marcarTareaHecha(Long idTarea) throws TareaNotfoundException, RuntimeException;
 
+    public List<Proyecto> getProductsByText(String text);
+
 }

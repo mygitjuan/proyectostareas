@@ -22,7 +22,7 @@ class ProyectoControllerTest {
 
     @Test
     @Transactional
-    void givenProducts_whengetAllProducts_thenIsNotNull() {
+    void givenProyects_whengetAllProyects_thenIsNotNull() {
         ResponseEntity<Object> response = controller.getAll();
         System.out.println("response:" + response.getBody());
 

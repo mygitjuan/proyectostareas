@@ -53,4 +53,9 @@ public class ProyectoTareaServicio implements ProyectoTareaService{
     public Tarea marcarTareaHecha(Long idTarea) throws TareaNotfoundException, RuntimeException {
         return null;
     }
+
+    @Override
+    public List<Proyecto> getProductsByText(String text) {
+        return repoProyecto.findByNameContaining(text);
+    }
 }
