@@ -8,7 +8,7 @@ import java.util.List;
 
 
 public interface ProyectoRepositoryData extends JpaRepository<Proyecto, Long> {
-    List<Proyecto> findByNameContaining(String name);
-    @Query("select p from Proyecto p where p.name = ?1")
-    Proyecto findByName(String name);
+    List<Proyecto> findByNombreContaining(String nombre);
+    @Query("select p from Proyecto p where p.nombre = ?1")
+    Proyecto findByNombre(String nombre);
 }

@@ -45,6 +45,6 @@ class ProyectoControllerTestMockMvc {
         mvc.perform(get("/proyectos").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$[*].name", hasItem("ReskillIA")));
+                .andExpect(jsonPath("$[*].nombre", hasItem("ReskillIA")));
     }
 }

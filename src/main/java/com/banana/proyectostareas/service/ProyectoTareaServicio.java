@@ -8,7 +8,6 @@ import com.banana.proyectostareas.persistence.ProyectoRepositoryData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -56,6 +55,6 @@ public class ProyectoTareaServicio implements ProyectoTareaService{
 
     @Override
     public List<Proyecto> getProductsByText(String text) {
-        return repoProyecto.findByNameContaining(text);
+        return repoProyecto.findByNombreContaining(text);
     }
 }

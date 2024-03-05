@@ -43,7 +43,7 @@ class ProyectoControllerTestWebMockMvc {
         Mockito.when(service.getProductsByText("Fake"))
                 .thenReturn(products);
 
-        Mockito.when(repository.findByNameContaining("Fake"))
+        Mockito.when(repository.findByNombreContaining("Fake"))
                 .thenReturn(products);
 
         Mockito.when(repository.findAll())
@@ -82,6 +82,6 @@ class ProyectoControllerTestWebMockMvc {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].name", is(nuevoProy.getNombre())));
+                .andExpect(jsonPath("$[0].nombre", is(nuevoProy.getNombre())));
     }
 }
