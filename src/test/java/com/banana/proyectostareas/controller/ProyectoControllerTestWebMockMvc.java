@@ -66,7 +66,6 @@ class ProyectoControllerTestWebMockMvc {
 
 
     @Test
-    //@Transactional
     @Order(1)
     public void givenProducts_whenGetProducts_thenStatus200() throws Exception {
         Proyecto nuevoProy = new Proyecto(1L, "Fake proyecto", LocalDate.now(),1,null);
@@ -80,5 +79,20 @@ class ProyectoControllerTestWebMockMvc {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].nombre", is(nuevoProy.getNombre())));
+    }
+
+    @Test
+    @Order(2)
+    public void givenProducts_whenGetProducts_thenStatus404() throws Exception {
+        Proyecto nuevoProy = new Proyecto(1L, "Fake proyecto", LocalDate.now(),1,null);
+
+        List<Proyecto> allProyectos = Arrays.asList(nuevoProy);
+
+        given(repository.findAll()).willReturn(allProyectos);
+
+        mvc.perform(get("/noexisto")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
     }
 }
