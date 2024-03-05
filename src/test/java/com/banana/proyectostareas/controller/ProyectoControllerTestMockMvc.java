@@ -1,7 +1,5 @@
 package com.banana.proyectostareas.controller;
 
-import com.banana.proyectostareas.util.JsonUtil;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.banana.proyectostareas.model.Proyecto;
 import com.banana.proyectostareas.persistence.ProyectoRepositoryData;
 import org.junit.jupiter.api.MethodOrderer;
