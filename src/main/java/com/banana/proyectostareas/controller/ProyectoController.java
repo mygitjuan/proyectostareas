@@ -4,10 +4,6 @@ import com.banana.proyectostareas.model.Proyecto;
 import com.banana.proyectostareas.persistence.ProyectoRepositoryData;
 import com.banana.proyectostareas.exception.StatusMessage;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,21 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
 @RequestMapping("/proyectos")
 @Validated
 @Tag(name = "Proyectos-tareas", description = "Proyectos-tareas API management APIs")
-public class ClienteControllerBoot {
-    private static final Logger logger = LoggerFactory.getLogger(ClienteControllerBoot.class);
+public class ProyectoController {
+    private static final Logger logger = LoggerFactory.getLogger(ProyectoController.class);
 
     @Autowired
     private ProyectoRepositoryData repo;
