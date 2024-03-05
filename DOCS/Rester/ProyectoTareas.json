@@ -1,0 +1,49 @@
+{
+    "info": {
+        "name": "RESTer",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Proyectostareas",
+            "item": [
+                {
+                    "request": {
+                        "url": "http://localhost:9900/api/proyectos/",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                        }
+                    },
+                    "id": "rester-45",
+                    "name": "get find all proyecto"
+                },
+                {
+                    "request": {
+                        "url": "http://localhost:9900/api/proyectos/alta",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "    {\"nombre\": \"RPG\",\"fechaCreacion\": \"2024-03-05\",\"tareas\": 1}"
+                        }
+                    },
+                    "id": "rester-44",
+                    "name": "post create proyecto"
+                }
+            ]
+        }
+    ]
+}
